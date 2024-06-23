@@ -1,65 +1,67 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+
+  const links = [
+    { text: "HOME", url: "/" },
+    { text: "ABOUT", url: "/#about" },
+    { text: "PROJECTS", url: "/projects" },
+    { text: "CONTACT", url: "/#contact" },
+  ];
+
+  const handleLinkClick = (url) => {
+    setIsOpen(false); // Close mobile menu on link click
+    if (url.startsWith("/#")) {
+      const id = url.substring(2);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
-    <nav className="bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-lg">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1
-                className="text-white font-bold text-xl cursor-pointer"
-                onClick={() => navigate("/")}
+              <RouterLink
+                to="/"
+                className="font-bold transition-all duration-300 cursor-pointer text-md text-slate-800 hover:text-violet-500"
               >
-                {" "}
-                Anamarija J.
-              </h1>
+                ANAMARIJA J.
+              </RouterLink>
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                to="/"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                HOME
-              </Link>
-              <Link
-                to="/about"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                ABOUT
-              </Link>
-              <Link
-                to="/projects"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                PROJECTS
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                CONTACT
-              </Link>
+            <div className="flex items-baseline ml-10 space-x-4">
+              {links.map((link) => (
+                <RouterLink
+                  key={link.text}
+                  to={link.url}
+                  onClick={() => handleLinkClick(link.url)}
+                  className="px-3 py-2 text-[13px] font-bold rounded-md text-slate-800 hover:text-violet-500 transition-all duration-300"
+                >
+                  {link.text}
+                </RouterLink>
+              ))}
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
+          <div className="flex -mr-2 md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-900 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
                 <svg
-                  className="block h-6 w-6"
+                  className="block w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -75,7 +77,7 @@ const Navbar = () => {
                 </svg>
               ) : (
                 <svg
-                  className="block h-6 w-6"
+                  className="block w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -100,30 +102,16 @@ const Navbar = () => {
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link
-            to="/"
-            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            HOME
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            ABOUT
-          </Link>
-          <Link
-            to="/projects"
-            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            PROJECTS
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            CONTACT
-          </Link>
+          {links.map((link) => (
+            <RouterLink
+              key={link.text}
+              to={link.url}
+              onClick={() => handleLinkClick(link.url)}
+              className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white"
+            >
+              {link.text}
+            </RouterLink>
+          ))}
         </div>
       </div>
     </nav>

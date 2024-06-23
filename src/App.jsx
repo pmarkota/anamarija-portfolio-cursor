@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { Home } from "./pages/Home";
+import ProjectsSection from "./components/ProjectsSection";
+import ProjectDetail from "./components/ProjectDetail";
+import "./App.css";
 
 function App() {
   return (
@@ -9,7 +12,9 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/" component={Home} />
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<ProjectsSection />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
         </Routes>
       </div>
     </Router>
