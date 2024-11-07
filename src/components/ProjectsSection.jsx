@@ -98,7 +98,7 @@ const ProjectsSection = () => {
         >
           <Link
             to="/projects"
-            className="inline-flex items-center px-8 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-violet-600 to-violet-400 hover:from-violet-500 hover:to-violet-300 shadow-lg hover:shadow-xl"
+            className="btn-hover color-1 inline-flex items-center px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg"
           >
             View All Projects
           </Link>
