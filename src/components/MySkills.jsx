@@ -6,7 +6,8 @@ export const MySkills = () => {
     {
       category: "Design",
       gradient: "from-rose-400 via-fuchsia-500 to-indigo-500",
-      bgGlow: "after:bg-fuchsia-500",
+      shadowGradient: "shadow-[0_20px_50px_-15px_rgba(219,39,119,0.3)]",
+      bgGlow: "after:bg-gradient-to-r after:from-rose-400 after:to-fuchsia-500",
       items: [
         "UI/UX Design",
         "Visual Design",
@@ -17,13 +18,15 @@ export const MySkills = () => {
     {
       category: "Tools",
       gradient: "from-cyan-400 via-blue-500 to-indigo-500",
-      bgGlow: "after:bg-blue-500",
+      shadowGradient: "shadow-[0_20px_50px_-15px_rgba(59,130,246,0.3)]",
+      bgGlow: "after:bg-gradient-to-r after:from-cyan-400 after:to-blue-500",
       items: ["Figma", "Adobe XD", "Sketch", "InVision"],
     },
     {
       category: "Process",
       gradient: "from-emerald-400 via-teal-500 to-cyan-500",
-      bgGlow: "after:bg-teal-500",
+      shadowGradient: "shadow-[0_20px_50px_-15px_rgba(20,184,166,0.3)]",
+      bgGlow: "after:bg-gradient-to-r after:from-emerald-400 after:to-teal-500",
       items: ["User Research", "Wireframing", "Prototyping", "User Testing"],
     },
   ];
@@ -72,9 +75,10 @@ export const MySkills = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`relative p-8 bg-white rounded-2xl dark:bg-dark-primary shadow-lg group hover:shadow-xl transition-all duration-300 
+              className={`relative p-8 bg-white rounded-2xl dark:bg-dark-primary group hover:shadow-xl transition-all duration-300 
                 after:absolute after:content-[''] after:-z-10 after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
-                after:w-[calc(100%-2rem)] after:h-[calc(100%-2rem)] after:opacity-40 after:blur-2xl after:rounded-2xl ${skillGroup.bgGlow}`}
+                after:w-[calc(100%-2rem)] after:h-[calc(100%-2rem)] after:opacity-40 after:blur-2xl after:rounded-2xl 
+                ${skillGroup.bgGlow} ${skillGroup.shadowGradient}`}
             >
               {/* Gradient Border Effect */}
               <div
@@ -90,7 +94,9 @@ export const MySkills = () => {
                 {skillGroup.items.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className={`px-4 py-2 text-sm font-medium text-white bg-gradient-to-r ${skillGroup.gradient} rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}
+                    className={`px-4 py-2 text-sm font-medium text-white bg-gradient-to-r ${skillGroup.gradient} 
+                    rounded-full shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5
+                    hover:${skillGroup.shadowGradient}`}
                   >
                     {skill}
                   </span>
