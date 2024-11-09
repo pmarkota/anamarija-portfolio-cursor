@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
+import { useTheme } from "../context/ThemeContext"; // Import useTheme
 
 const BlogBackground = () => {
   const containerRef = useRef();
@@ -7,6 +8,7 @@ const BlogBackground = () => {
   const cameraRef = useRef();
   const rendererRef = useRef();
   const particlesRef = useRef();
+  const { isDarkMode } = useTheme(); // Get dark mode state
 
   useEffect(() => {
     // Scene setup
@@ -41,7 +43,7 @@ const BlogBackground = () => {
       size: 0.005,
       color: "#8B5CF6",
       transparent: true,
-      opacity: 0.5,
+      opacity: isDarkMode ? 0.8 : 0, // Set opacity based on dark mode
       blending: THREE.AdditiveBlending,
     });
 
@@ -76,15 +78,24 @@ const BlogBackground = () => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      containerRef.current?.removeChild(rendererRef.current.domElement);
+      if (containerRef.current && rendererRef.current) {
+        containerRef.current.removeChild(rendererRef.current.domElement);
+      }
     };
-  }, []);
+  }, [isDarkMode]); // Add isDarkMode to dependencies
+
+  // Update particle opacity when dark mode changes
+  useEffect(() => {
+    if (particlesRef.current) {
+      particlesRef.current.material.opacity = isDarkMode ? 0.8 : 0;
+    }
+  }, [isDarkMode]);
 
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0 }}
+      className="absolute inset-0 pointer-events-none"
+      style={{ zIndex: -1 }}
     />
   );
 };
