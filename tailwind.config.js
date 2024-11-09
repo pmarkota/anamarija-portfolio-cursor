@@ -11,7 +11,39 @@ export default {
           text: "#e5e5e5",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "100%",
+            color: "inherit",
+            a: {
+              color: "inherit",
+              "&:hover": {
+                color: "#8B5CF6",
+              },
+            },
+            h1: {
+              color: "inherit",
+            },
+            h2: {
+              color: "inherit",
+            },
+            h3: {
+              color: "inherit",
+            },
+            h4: {
+              color: "inherit",
+            },
+            p: {
+              color: "inherit",
+            },
+            strong: {
+              color: "inherit",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

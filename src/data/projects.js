@@ -1,68 +1,94 @@
 export const projects = [
   {
     id: 1,
-    title: "Project One",
-    category: "UI/UX Design",
+    title: "E-commerce Platform",
+    category: "Web Design",
     description:
-      "A comprehensive redesign of a mobile banking application focusing on user experience and accessibility.",
-    challenge:
-      "The main challenge was to simplify complex banking operations while maintaining security and compliance requirements.",
-    solution:
-      "We implemented a user-centered design approach, conducting extensive user research and iterative testing to create an intuitive interface that simplifies banking tasks.",
-    impact:
-      "The redesign resulted in a 40% reduction in task completion time and a 25% increase in mobile banking adoption.",
-    technologies: ["Figma", "Protopie", "UserTesting"],
+      "A modern e-commerce platform with seamless user experience and advanced features.",
     image:
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
+      "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3",
+    tags: ["React", "Node.js", "MongoDB"],
+    gradient: "from-violet-600 to-fuchsia-600",
+    challenge: "Creating a scalable and user-friendly e-commerce solution.",
+    solution: "Implemented modern tech stack with focus on performance and UX.",
+    impact: "Increased conversion rates by 45% and reduced cart abandonment.",
     images: [
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
-      "https://via.placeholder.com/800x400.png?text=Project+One+Image+2",
+      "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3",
     ],
-    tags: ["UI Design", "Mobile App", "Banking"],
-    gradient: "from-violet-500 to-fuchsia-500",
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Redux",
+      "Tailwind CSS",
+    ],
   },
   {
     id: 2,
-    title: "Project Two",
-    category: "Web Design",
+    title: "Mobile Banking App",
+    category: "Mobile Apps",
     description:
-      "An e-commerce platform redesign that increased conversion rates by improving the user journey.",
-    challenge:
-      "The challenge was to improve conversion rates while maintaining a seamless shopping experience across all devices.",
-    solution:
-      "We redesigned the checkout process and implemented a responsive design system that works flawlessly on all screen sizes.",
-    impact:
-      "The new design increased mobile conversions by 35% and reduced cart abandonment by 25%.",
-    technologies: ["Figma", "React", "Shopify"],
+      "A secure and intuitive mobile banking application for modern users.",
     image:
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3",
+    tags: ["React Native", "Firebase", "UI/UX"],
+    gradient: "from-blue-600 to-violet-600",
+    challenge: "Balancing security with user experience in mobile banking.",
+    solution: "Created streamlined flows with robust security measures.",
+    impact: "Achieved 4.8/5 star rating with 100k+ downloads.",
     images: [
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
-      "https://via.placeholder.com/800x400.png?text=Project+Two+Image+2",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1579389083395-4507e98b5b67?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1616077168079-7e09a677fb2c?ixlib=rb-4.0.3",
     ],
-    tags: ["Web Design", "E-commerce", "UX Research"],
-    gradient: "from-blue-500 to-cyan-500",
+    technologies: ["React Native", "Firebase", "Redux", "Native Base", "Jest"],
   },
   {
     id: 3,
-    title: "Project Three",
-    category: "Design System",
+    title: "Design System",
+    category: "UI/UX",
     description:
-      "Created a comprehensive design system for a large-scale enterprise application.",
-    challenge:
-      "The main challenge was creating a consistent design language across multiple products and teams.",
-    solution:
-      "We developed a modular design system with clear documentation and reusable components.",
-    impact:
-      "Reduced design inconsistencies by 90% and improved development speed by 40%.",
-    technologies: ["Figma", "Storybook", "Git"],
+      "A comprehensive design system for a large enterprise application.",
     image:
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3",
+    tags: ["Figma", "Design Systems", "Documentation"],
+    gradient: "from-fuchsia-600 to-pink-600",
+    challenge: "Creating consistency across multiple products and teams.",
+    solution: "Developed a scalable design system with clear guidelines.",
+    impact: "Reduced design-to-development time by 60%.",
     images: [
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg",
-      "https://via.placeholder.com/800x400.png?text=Project+Three+Image+2",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3",
     ],
-    tags: ["Design System", "Enterprise", "Documentation"],
-    gradient: "from-emerald-500 to-teal-500",
+    technologies: [
+      "Figma",
+      "Storybook",
+      "React",
+      "TypeScript",
+      "Styled Components",
+    ],
+  },
+  {
+    id: 4,
+    title: "Brand Identity",
+    category: "Branding",
+    description: "Complete brand identity design for a tech startup.",
+    image:
+      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3",
+    tags: ["Branding", "Logo Design", "Guidelines"],
+    gradient: "from-violet-600 to-indigo-600",
+    challenge: "Creating a memorable and versatile brand identity.",
+    solution: "Developed comprehensive brand guidelines and assets.",
+    impact: "Helped secure Series A funding and increased brand recognition.",
+    images: [
+      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3",
+    ],
+    technologies: ["Adobe Creative Suite", "Sketch", "Principle", "InVision"],
   },
 ];

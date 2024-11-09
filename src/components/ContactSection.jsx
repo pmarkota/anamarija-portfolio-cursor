@@ -70,7 +70,7 @@ const ContactSection = () => {
           className="relative mb-8 sm:mb-12 glow-wrapper"
         >
           <div className="absolute inset-0 flex items-center justify-center opacity-10">
-            <div className="w-96 h-96 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 rounded-full blur-3xl" />
+            <div className="rounded-full w-96 h-96 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 blur-3xl" />
           </div>
 
           <div className="relative flex flex-col items-center glow-container">
@@ -79,7 +79,7 @@ const ContactSection = () => {
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="flex items-center justify-center w-20 h-20 mb-6 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-lg shadow-violet-500/30"
+              className="flex items-center justify-center w-20 h-20 mb-6 shadow-lg rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-violet-500/30"
             >
               <svg
                 className="w-10 h-10 text-white"
@@ -123,11 +123,11 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative group order-2 md:order-1"
+            className="relative order-2 group md:order-1"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-2xl blur-xl transform group-hover:scale-105 transition-transform duration-300" />
+            <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-2xl blur-xl group-hover:scale-105" />
 
-            <div className="relative p-4 sm:p-8 bg-white dark:bg-dark-primary rounded-2xl border border-violet-100 dark:border-violet-900 hover:shadow-xl transition-all duration-300">
+            <div className="relative p-4 transition-all duration-300 bg-white border sm:p-8 dark:bg-dark-primary rounded-2xl border-violet-100 dark:border-violet-900 hover:shadow-xl">
               <h3 className="mb-8 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">
                 Contact Information
               </h3>
@@ -197,11 +197,11 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative group order-1 md:order-2"
+            className="relative order-1 group md:order-2"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-2xl blur-xl transform group-hover:scale-105 transition-transform duration-300" />
+            <div className="absolute inset-0 transition-transform duration-300 transform bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 rounded-2xl blur-xl group-hover:scale-105" />
 
-            <div className="relative p-4 sm:p-8 bg-white dark:bg-dark-primary rounded-2xl border border-violet-100 dark:border-violet-900 hover:shadow-xl transition-all duration-300">
+            <div className="relative p-4 transition-all duration-300 bg-white border sm:p-8 dark:bg-dark-primary rounded-2xl border-violet-100 dark:border-violet-900 hover:shadow-xl">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -241,7 +241,7 @@ const ContactSection = () => {
                       onChange={handleChange}
                       placeholder="Your Message"
                       rows="4"
-                      className="w-full px-4 py-3 text-gray-900 transition-all duration-200 bg-gray-50 dark:bg-dark-secondary dark:text-dark-text rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-violet-500 focus:bg-white dark:focus:bg-dark-primary"
+                      className="w-full px-4 py-3 text-gray-900 transition-all duration-200 resize-none bg-gray-50 dark:bg-dark-secondary dark:text-dark-text rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:bg-white dark:focus:bg-dark-primary"
                     ></textarea>
                     {formErrors.message && (
                       <p className="mt-1 text-sm text-red-500">
@@ -253,7 +253,7 @@ const ContactSection = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full px-6 py-3 text-lg font-medium text-white transition-all duration-300 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:from-violet-500 hover:to-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 shadow-lg shadow-violet-500/20"
+                    className="w-full px-6 py-3 text-lg font-medium text-white transition-all duration-300 shadow-lg rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:from-violet-500 hover:to-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 shadow-violet-500/20"
                   >
                     Send Message
                   </motion.button>

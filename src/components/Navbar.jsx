@@ -10,10 +10,11 @@ const Navbar = () => {
   const location = useLocation();
 
   const links = [
-    { text: "HOME", url: "/#hero" },
-    { text: "ABOUT", url: "/#about" },
-    { text: "PROJECTS", url: "/projects" },
-    { text: "CONTACT", url: "/#contact" },
+    { text: "Home", url: "/#hero" },
+    { text: "About", url: "/#about" },
+    { text: "Projects", url: "/projects" },
+    { text: "Blog", url: "/blog" },
+    { text: "Contact", url: "/#contact" },
   ];
 
   useEffect(() => {
@@ -42,14 +43,12 @@ const Navbar = () => {
           block: "start",
         });
       }
-    } else if (url === "/") {
-      if (location.pathname === "/") {
+    } else {
+      if (location.pathname === url) {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
-      } else {
-        window.location.href = url;
       }
     }
   };
@@ -83,8 +82,10 @@ const Navbar = () => {
                   key={link.text}
                   to={link.url}
                   onClick={(e) => {
-                    e.preventDefault();
-                    handleLinkClick(link.url);
+                    if (link.url.startsWith("/#")) {
+                      e.preventDefault();
+                      handleLinkClick(link.url);
+                    }
                   }}
                   className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300"
                 >
